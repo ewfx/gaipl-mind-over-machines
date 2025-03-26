@@ -1,0 +1,19 @@
+---
+- name: Upgrading Application
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Log in to OpenShift
+      command: oc login --token={{ oc_token }} --server={{ oc_server }}
+      register: login_result
+      changed_when: false
+      failed_when: login_result.rc != 0
+
+    - name: Update image for deployment
+      command: oc set image deployment/{{ app_name }} {{ container_name }}={{ image_url }} --namespace={{ project_name }}
+
+    - name: Scale down deployment
+      command: oc scale deployment/{{ app_name }} --replicas=0 -n {{ project_name }}
+
+    - name: Scale up deployment
+      command: oc scale deployment/{{ app_name }} --replicas=1 -n {{ project_name }}
