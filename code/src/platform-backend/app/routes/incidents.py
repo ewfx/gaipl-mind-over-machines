@@ -1,7 +1,6 @@
 import logging
 
 from fastapi import APIRouter, HTTPException
-from app.services.service_now import fetch_incidents
 from app.models.incident_model import IncidentSummary
 from app.models.incident_model import IncidentMetrics
 from app.models.incident_model import IncidentTableEntry
