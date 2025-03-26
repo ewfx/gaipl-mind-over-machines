@@ -85,6 +85,35 @@ Ensure that **ElasticSearch** is properly set up in Docker.
 To start the React frontend, run the following command:
 
 ```sh
-npm start
+   npm start
+```
 
+# Project Setup Guide
 
+## 2. Start the Python Backend:
+
+In a separate terminal window, navigate to the backend folder and run the following command to start the Python backend:
+
+```sh
+python app.py
+```
+# Project Details
+
+## 🏗️ Tech Stack
+
+- **🔹 Frontend:** React  
+- **🔹 Backend:** Python (Flask/Django)  
+- **🔹 Database:** ElasticSearch  
+- **🔹 AI:** Llama70B, Chainlit  
+- **🔹 Deployment:** OpenShift  
+- **🔹 Incident Management:** ServiceNow  
+
+---
+
+## 👥 Team
+
+- **Your Name**  
+  GitHub: [Your GitHub Profile](#) | LinkedIn: [Your LinkedIn Profile](#)
+
+- **Teammate 2**  
+  GitHub: [Teammate's GitHub Profile](#) | LinkedIn: [Teammate's LinkedIn Profile](#)
