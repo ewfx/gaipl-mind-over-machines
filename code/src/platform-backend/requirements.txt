@@ -1,0 +1,9 @@
+fastapi
+pydantic
+elasticsearch
+sentence_transformers
+pandas
+kubernetes
+requests
+pytest
+httpx
