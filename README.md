@@ -1,4 +1,5 @@
 # 🚀 Project Name
+Develop a Gen-AI enabled Integrated Platform Environment thaat provides an integrated console to our platform support teams providing them few capabilities.
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
