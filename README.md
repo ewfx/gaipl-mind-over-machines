@@ -56,8 +56,35 @@ We built the **Gen-AI enabled Integrated Platform Environment** using the follow
 
 ### Install dependencies
 
-For Python backend:
+1. Python backend:  
    ```sh
-   pip install -r requirements.tx
+   pip install -r requirements.txt
+
+# Project Setup Guide
+
+## Set Up Docker and ElasticSearch
+
+### Ensure Docker is Installed and Running
+
+Make sure that **Docker** is installed on your machine and running properly. You can download Docker from [here](https://www.docker.com/products/docker-desktop).
+
+### ElasticSearch Configuration
+
+Follow the official ElasticSearch setup guides to configure the environment for real-time indexing:
+
+- [ElasticSearch Installation Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
+
+Ensure that **ElasticSearch** is properly set up in Docker.
+
+---
+
+## Running the Project
+
+### 1. Start the React Frontend:
+
+To start the React frontend, run the following command:
+
+```sh
+npm start
 
 
