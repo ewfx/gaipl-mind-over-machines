@@ -1,0 +1,13 @@
+---
+- name: Scaling Application
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Log in to OpenShift
+      command: oc login --token={{ oc_token }} --server={{ oc_server }}
+      register: login_result
+      changed_when: false
+      failed_when: login_result.rc != 0
+
+    - name: Scale Deployment
+      command: oc scale deployment/{{ app_name }} --replicas={{ replicas }} -n {{ project_name }}

@@ -1,0 +1,40 @@
+---
+- name: Undeploying Application
+  hosts: localhost
+  connection: local
+  vars:
+    app_name: ""
+    project_name: ""
+    oc_token: ""
+    oc_server: ""
+
+  tasks:
+    - name: Log in to OpenShift
+      command: oc login --token={{ oc_token }} --server={{ oc_server }}
+      register: login_result
+      changed_when: false
+      failed_when: login_result.rc != 0
+
+    - name: Delete deployment
+      command: oc delete deployment {{ app_name }} -n {{ project_name }}
+      register: delete_deployment_result
+      failed_when: delete_deployment_result.rc != 0
+      changed_when: "'deleted' in delete_deployment_result.stdout"
+
+    - name: Delete service
+      command: oc delete svc {{ app_name }}-svc -n {{ project_name }}
+      ignore_errors: true
+      register: delete_service_result
+      changed_when: "'deleted' in delete_service_result.stdout"
+
+    - name: Delete route
+      command: oc delete route {{ app_name }}-route -n {{ project_name }}
+      ignore_errors: true
+      register: delete_route_result
+      changed_when: "'deleted' in delete_route_result.stdout"
+
+    - name: Verify cleanup status
+      command: oc get deployment {{ app_name }} -n {{ project_name }}
+      register: check_deployment_result
+      ignore_errors: true
+      failed_when: check_deployment_result.rc == 0

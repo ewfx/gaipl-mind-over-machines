@@ -1,0 +1,51 @@
+---
+- name: Deploying New Application
+  hosts: localhost
+  connection: local
+  vars:
+    app_name: ""
+    container_name: ""
+    image_url: ""
+    project_name: ""
+    oc_token: ""
+    oc_server: ""
+    replicas: 1
+    port: 8080
+
+  tasks:
+    - name: Log in to OpenShift
+      command: oc login --token={{ oc_token }} --server={{ oc_server }}
+      register: login_result
+      changed_when: false
+      failed_when: login_result.rc != 0
+
+    - name: Create a new deployment
+      command: >
+        oc create deployment {{ app_name }} 
+        --image={{ image_url }} 
+        --namespace={{ project_name }}
+      register: deployment_result
+      failed_when: deployment_result.rc != 0
+      changed_when: "'created' in deployment_result.stdout"
+
+    - name: Expose the deployment as a service
+      command: >
+        oc expose deployment {{ app_name }}
+        --port={{ port }}
+        --name={{ app_name }}-svc
+        --namespace={{ project_name }}
+      register: service_result
+      ignore_errors: true
+      changed_when: "'created' in service_result.stdout"
+
+    - name: Create a route to expose the application to external traffic
+      command: >
+        oc expose svc/{{ app_name }}-svc
+        --name={{ app_name }}-route
+        --namespace={{ project_name }}
+      register: route_result
+      ignore_errors: true
+      changed_when: "'created' in route_result.stdout"
+
+    - name: Scale the application to desired replicas
+      command: oc scale deployment/{{ app_name }} --replicas={{ replicas }} -n {{ project_name }}
