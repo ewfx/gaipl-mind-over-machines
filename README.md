@@ -102,18 +102,20 @@ python app.py
 ## 🏗️ Tech Stack
 
 - **🔹 Frontend:** React  
-- **🔹 Backend:** Python (Flask/Django)  
+- **🔹 Backend:** Python (FastAPI)  
 - **🔹 Database:** ElasticSearch  
-- **🔹 AI:** Llama70B, Chainlit  
-- **🔹 Deployment:** OpenShift  
-- **🔹 Incident Management:** ServiceNow  
-
+- **🔹 AI:** Llama70B, Chainlit, LangChain, LangGraph
+- **🔹 Deployment:** OpenShift, Ansible, Docker 
+- **🔹 Incident Management:** ServiceNow
+- **🔹 KB Articles:** Text files
 ---
 
 ## 👥 Team
 
-- **Your Name**  
-  GitHub: [Your GitHub Profile](#) | LinkedIn: [Your LinkedIn Profile](#)
+- **Your Name**  Krishna Kumar Sabbu
 
-- **Teammate 2**  
-  GitHub: [Teammate's GitHub Profile](#) | LinkedIn: [Teammate's LinkedIn Profile](#)
+- **Teammate 2**  Mitta Sarath Kumar
+- **Teammate 3**  Chimalakonda Sai Tejaswi
+- **Teammate 3**  Padma Naresh
+- **Teammate 3**  Chandra Javalkar
+  
