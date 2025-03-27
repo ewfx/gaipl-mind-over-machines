@@ -1,5 +1,6 @@
-# 🚀 Project Name
-Develop a Gen-AI enabled Integrated Platform Environment thaat provides an integrated console to our platform support teams providing them few capabilities.
+# 🚀 Gen-AI Enabled Integrated Platform Environment
+
+Develop a **Gen-AI enabled Integrated Platform Environment** that provides an integrated console to our platform support teams, empowering them with various capabilities such as incident resolution, AI-based root cause analysis, automated workflows, and more.
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -15,7 +16,7 @@ Develop a Gen-AI enabled Integrated Platform Environment thaat provides an integ
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+This project aims to revolutionize platform support by creating an **AI-powered integrated platform environment**. Our solution leverages **Llama70B** AI models, **Chainlit** for real-time conversational interfaces, and **OpenShift** for scalable deployment, ensuring that platform support teams can efficiently resolve incidents and improve system health through automation and real-time insights.
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
@@ -25,37 +26,94 @@ A brief overview of your project and its purpose. Mention which problem statemen
 ![Screenshot 1](link-to-image)
 
 ## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+The inspiration behind this project came from the need to automate incident management and improve platform performance monitoring. By combining **AI-powered insights** with **real-time monitoring**, we aim to assist support teams in identifying, diagnosing, and resolving issues faster and more effectively.
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+- **Incident Resolution**: Automatically generate and resolve incidents, reducing manual intervention.
+- **AI Chatbot Assistance**: Provide context-based incident resolution and root cause analysis through an AI-driven chatbot.
+- **Real-Time Monitoring**: Track system health, CPU, memory usage, and more, with the ability to scale based on load.
+- **ServiceNow Integration**: Seamlessly integrate with ServiceNow for automatic ticket creation and updates.
+- **ElasticSearch Integration**: Leverage ElasticSearch for indexing and searching incident-related data.
 
 ## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+We built the **Gen-AI enabled Integrated Platform Environment** using the following technologies:
+- **Frontend**: Built using **React** for an intuitive and responsive user interface.
+- **Backend**: Powered by **Python**, providing robust APIs and incident handling logic.
+- **Database**: **ElasticSearch** for fast and scalable indexing of incident data.
+- **AI Chatbot**: Integrated with **Chainlit** and **Llama70B** for real-time, contextual assistance.
+- **Deployment**: Deployed on **OpenShift** to ensure scalability and availability.
+- **Incident Management**: Integrated with **ServiceNow** to automate ticket generation and status updates.
 
 ## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+- **Integration Complexity**: Integrating multiple tools like **OpenShift**, **ElasticSearch**, **ServiceNow**, and **AI models** was a complex task requiring seamless communication between components.
+- **Real-Time Performance**: Ensuring that the AI-driven chatbot could handle real-time queries without latency was challenging, especially with large-scale incidents.
+- **Scaling Issues**: Properly scaling the platform to handle multiple concurrent incidents required efficient load balancing and resource management with OpenShift.
 
 ## 🏃 How to Run
 1. Clone the repository  
    ```sh
-   git clone https://github.com/your-repo.git
-   ```
-2. Install dependencies  
+   git clone [https://github.com/your-repo/genal-platform.git](https://github.com/ewfx/gaipl-mind-over-machines.git)
+
+### Install dependencies
+
+1. Python backend:  
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
-   ```
-3. Run the project  
-   ```sh
-   npm start  # or python app.py
-   ```
+   pip install -r requirements.txt
+
+# Project Setup Guide
+
+## Set Up Docker and ElasticSearch
+
+### Ensure Docker is Installed and Running
+
+Make sure that **Docker** is installed on your machine and running properly. You can download Docker from [here](https://www.docker.com/products/docker-desktop).
+
+### ElasticSearch Configuration
+
+Follow the official ElasticSearch setup guides to configure the environment for real-time indexing:
+
+- [ElasticSearch Installation Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
+
+Ensure that **ElasticSearch** is properly set up in Docker.
+
+---
+
+## Running the Project
+
+### 1. Start the React Frontend:
+
+To start the React frontend, run the following command:
+
+```sh
+   npm start
+```
+
+# Project Setup Guide
+
+## 2. Start the Python Backend:
+
+In a separate terminal window, navigate to the backend folder and run the following command to start the Python backend:
+
+```sh
+python app.py
+```
+# Project Details
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+
+- **🔹 Frontend:** React  
+- **🔹 Backend:** Python (Flask/Django)  
+- **🔹 Database:** ElasticSearch  
+- **🔹 AI:** Llama70B, Chainlit  
+- **🔹 Deployment:** OpenShift  
+- **🔹 Incident Management:** ServiceNow  
+
+---
 
 ## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+
+- **Your Name**  
+  GitHub: [Your GitHub Profile](#) | LinkedIn: [Your LinkedIn Profile](#)
+
+- **Teammate 2**  
+  GitHub: [Teammate's GitHub Profile](#) | LinkedIn: [Teammate's LinkedIn Profile](#)
